@@ -13,8 +13,8 @@
 			<label for="noun">Noun:</label>
 			<input type="text" name="noun" ng-model="noun"></input>
 			<h1>{{adj}} the {{noun}}</h1>
-			<div ng-init="list=[{name: 'foo',val: 4},{name: 'bar',val: 42}]">
-				<ul ng-repeat="element in list">
+			<div ng-init="list=[{name: 'foo4',val: 3},{name: 'foo9',val: 43},{name: 'foo1',val: 14},{name: 'foo',val: 9},{name: 'bar',val: 42}]">
+				<ul ng-repeat="element in list | orderBy:'val'">
 					<li>{{element.name}} {{element.val}}</li>
 				</ul>
 			</div>

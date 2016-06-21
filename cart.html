@@ -4,20 +4,31 @@
 		<meta charset="utf-8" />
 		<title>Cart</title>
 
+		<link rel="stylesheet" type="text/css" href="cart.css">
 	</head>
 	<body>
 
-		<div ng-app="cart" ng-controller="cartControl">
-			<label for="name">Item:</label>
-			<input type="text" name="name" ng-model="name"></input>
-			<label for="price">Price:</label>
-			<input type="number" name="price" ng-model="price"></input>
-			<button type="button" ng-click="createItem()">Add Item</button>
-			<ul ng-repeat="item in cart">
-				<li>{{item.name}}: {{item.price | currency}}</li>
-			</ul>
-			<span>{{ getTotal() | currency}}</span>
-		</div>
+		<article id="cartContainer" ng-app="cart" ng-controller="cartControl">
+			<div id="addItem">
+				<label for="input-name">Item:</label>
+				<input type="text" id="input-name" ng-model="name">
+				<label for="input-price">Price:</label>
+				<input type="number" id="input-price" ng-model="price">
+				<a class="round-button add-button" ng-click="createItem()">+</a>
+			</div>
+
+			<div id="cart">
+				<ul>
+					<li ng-repeat="item in cart" ng-cloak>
+						<span class="item-name">{{item.name}}</span>
+						<span class="item-price">{{item.price | currency}}</span>
+						<span class="item-remove"><a class="remove-button round-button" ng-click="remove($index)">-</a></span>
+					</li>
+				</ul>
+			</div>
+
+			<span ng-cloak id="total">Total Price:{{ total | currency}}</span>
+		</article>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 		<script src="cart.js"></script>

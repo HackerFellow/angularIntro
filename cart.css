@@ -1,0 +1,123 @@
+html {/* http://stackoverflow.com/a/20446684/2423187 */
+	background-image: linear-gradient(#00FFFF, #00b2b2);
+	box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+	min-height: 100%;
+}
+
+body{
+	font-family: Consolas,monaco,monospace;
+}
+
+#cartContainer{
+	width: 30%;
+	min-width: 200px;
+	margin: 0 auto;/*0 top/bot, auto l/r */
+	text-align:center;
+}
+
+#addItem{
+
+}
+
+#addItem input{
+	display: block;
+	font-size:11px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	margin: 2px auto;
+	width: 60%;
+}
+input[type='number'] {
+	-moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+#addItem a{
+	margin: 10px auto;
+}
+
+#cart{
+
+}
+
+#cart ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+#cart li{
+	border-width: 1px 2px;
+	border-style: solid;
+}
+#cart li:last-child{
+	border-width: 1px 2px 2px 2px;
+}
+#cart li:first-child{
+	border-width: 2px 2px 1px 2px;
+}
+#cart li:only-child{
+	border-width: 2px;
+}
+#cart span{
+	padding: 2px;
+}
+.item-name{
+	text-align: left;
+	width:50%;/*Dunno why*/
+	display: table-cell;
+}
+.item-price{
+	text-align: right;
+	width:45%;
+	display: table-cell;
+}
+.item-remove{
+	width: 15px;
+	display: table-cell;
+	border-style: solid;
+	border-width: 0 0 0 2px;
+}
+
+#total{
+
+}
+
+/* http://codeitdown.com/css-round-buttons/ */
+.add-button{
+	width:30px;
+	height:30px;
+	line-height:30px;
+	color:#f5f5f5;
+	background: green;
+	border-color: #f5f5f5;
+}
+.add-button:hover {
+	background: purple;
+}
+.remove-button{
+	width:15px;
+	height:15px;
+	line-height:12px;
+	color:#f5f5f5;
+	background: red;
+	border-color: #f5f5f5;
+}
+.remove-button:hover {
+	background: purple;
+}
+.round-button {
+	display:block;
+	border: 2px solid;
+	border-radius: 50%;
+	text-align:center;
+	text-decoration:none;
+	box-shadow: 0 0 3px gray;
+	font-size:20px;
+	font-weight:bold;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+	display: none !important;
+}

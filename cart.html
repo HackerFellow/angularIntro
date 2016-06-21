@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Cart</title>
+
+	</head>
+	<body>
+
+		<div ng-app="cart" ng-controller="cartControl">
+			<label for="name">Item:</label>
+			<input type="text" name="name" ng-model="name"></input>
+			<label for="price">Price:</label>
+			<input type="number" name="price" ng-model="price"></input>
+			<button type="button" ng-click="createItem()">Add Item</button>
+			<ul ng-repeat="item in cart">
+				<li>{{item.name}}: {{item.price | currency}}</li>
+			</ul>
+			<span>{{ getTotal() | currency}}</span>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+		<script src="cart.js"></script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>route</title>
+
+		<!--<link rel="stylesheet" type="text/css" href="cart.css">-->
+	</head>
+	<body ng-app="route">
+		<nav ng-controller="MainController">
+			<a href="#/login">Login</a>
+			<a href="#/">Landing</a>
+			<a href="#/edit">Edit</a>
+		</nav>
+
+		<article id="container">
+			<ng-view></ng-view>
+		</article>
+
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.js"></script>
+		<script src="route.js"></script>
+	</body>
+</html>

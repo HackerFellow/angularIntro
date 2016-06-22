@@ -32,10 +32,10 @@ app.controller('MainController', function($scope, $routeParams) {
 
 app.controller('LandingController', ['$scope', '$cookieStore', function($scope, $cookieStore) {
 	var user;
-	if((user = $cookieStore.get("user")) == undefined){//Not logged in
-		$scope.message = "Please <a href=\"#/login\">Login</a>";
-	}else{//Logged in
+	if((user = $cookieStore.get("user")) != undefined){//logged in
 		$scope.message = "Win " + user;
+	}else{
+		$scope.notLoggedIn = true;
 	}
 }]);
 

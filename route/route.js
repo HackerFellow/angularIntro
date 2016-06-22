@@ -52,19 +52,25 @@ app.controller('EditController', ['$scope', '$cookieStore', '$location', '$route
 	if((user = $cookieStore.get("user")) == undefined){//Not logged in
 		alert("Not logged in");
 		$location.url('/');
-	}
-	if(user != $routeParams.user){
+	}else if($routeParams.user == undefined){
+		$location.url('/edit/' + user);
+	}else if(user != $routeParams.user){
 		$location.url('/');
+	}else{
+		$scope.realname;
+		$scope.quote;
+
+		var data = $cookieStore.get($routeParams.user);
+		if(data != undefined){
+			$scope.realname = data.realname;
+			$scope.quote = data.quote;
+		}
+
+		$scope.save = function(){
+			 $cookieStore.put(user,{realname: $scope.realname,quote: $scope.quote});
+			 $location.url('/view/' + user);
+		};
 	}
-
-	var data = $cookieStore.get($routeParams.user);
-	$scope.realname = data.realname;
-	$scope.quote = data.quote;
-
-	$scope.save = function(){
-		 $cookieStore.put(user,{realname: $scope.realname,quote: $scope.quote});
-		 $location.url('/view/' + user);
-	};
 }]);
 app.controller('ViewController', ['$scope', '$cookieStore', '$location', '$routeParams',
 		function($scope, $cookieStore, $location, $routeParams) {
